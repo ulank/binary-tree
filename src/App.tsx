@@ -1,13 +1,12 @@
 import './App.css'
 import React, {useEffect} from "react";
-import ReactJson from "react-json-view";
+import Tree from "./Tree";
 
 
 class BinaryTree<T> {
     _value: T;
     _left?: BinaryTree<T>;
     _right?: BinaryTree<T>;
-
 
     constructor(value: T) {
         this._value = value;
@@ -73,13 +72,13 @@ class BinarySearchTree<T> {
 function App() {
 
     useEffect(() => {
-        document.addEventListener('keydown', detectKeyDown, true)
+        document.addEventListener('keydown', detectKeyDown, true);
     }, [])
 
     // @ts-ignore
     const detectKeyDown = (e) => {
         if (e.key === ' ') {
-            tree.insert(randomNumberFromInterval(-100, 100))
+            tree.insert(randomNumberFromInterval(-100, 100));
         }
     }
 
@@ -96,10 +95,43 @@ function App() {
     }
 
     const tree = new BinarySearchTree(comparator);
-     return (
+
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+    tree.insert(randomNumberFromInterval(-100, 100));
+
+    return (
         <div className="App">
-            <div>
-                <ReactJson src={tree} />
+            <div className="tree">
+                <Tree node={tree.root}/>
             </div>
         </div>
     )
