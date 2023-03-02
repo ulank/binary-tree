@@ -1,4 +1,9 @@
 * {margin: 0; padding: 0;}
+.playground {
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
 
 .tree ul {
     padding-top: 20px;

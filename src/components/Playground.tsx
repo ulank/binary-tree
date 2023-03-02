@@ -76,6 +76,7 @@ class BinarySearchTree<T> {
 function Playground() {
 
     const [tree, setTree] = useState(new BinarySearchTree(comparator))
+    const [space, setSpace] = useState(0);
 
     tree.insert(randomNumberFromInterval(-100, 100));
 
@@ -87,7 +88,7 @@ function Playground() {
     const detectKeyDown = (e) => {
         if (e.key === ' ') {
             tree.insert(randomNumberFromInterval(-100, 100));
-
+            setSpace((space) => space + 1);
             setTree((tree) => tree.render());
         }
     }
@@ -106,7 +107,7 @@ function Playground() {
     }
 
     return (
-        <div>
+        <div className="playground">
             <div className="tree">
                 <Tree node={tree.root}/>
             </div>
