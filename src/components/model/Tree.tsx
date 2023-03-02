@@ -6,13 +6,11 @@ import TreeNode from "./TreeNode";
 function Tree(props) {
     const [node, setNode] = useState(props.node);
 
-    console.log(node);
-
     return (
         node !== undefined ? (
             <ul>
                 <li>
-                    <a href="#">{node._value}</a>
+                    <a href="src/components/model/Tree#">{node._value}</a>
                     <ul>
                         {node._left !== undefined ? (
                             <TreeNode node={node._left}/>
